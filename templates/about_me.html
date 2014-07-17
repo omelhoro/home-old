@@ -1,61 +1,38 @@
 {% extends "./base.html" %}
 
 {% block article %}
-  <h3>Field of interest</h3>
-  <h4>Summary</h4>
-  
- <p>
-  I'm a former BA-student of Russian Linguistics and History at the U Hamburg. I enjoy combining humanities with digital technologies -> Digital Humanities. My choice of programming language vary with the task: I've solved problems in Scala, Python, Coffeescript, Dart and O'Caml.
-  Although I must say that Python and Coffeescript are my main langs. Contact: igor.fischer[at]gmail.com.
- </p>
+<p class="summary">
+    <img class="photoofme" src="/static/me.jpg" />
+    I'm currently a BA-student of Russian Linguistics and History at the U Hamburg. I enjoy combining humanities with digital technologies -> Digital Humanities.
+    My choice of programming language vary with the task:
+    I've solved problems in Scala, Dart, O'Caml, Python and Coffeescript,
+    though latter two are my main langs.
+</p>
+Besides programming I like reading science-fiction (especially Stanislaw Lem or short stories) and learning Portugues.
+<p>
+    I've done projects in various linguistic fields, for example
+</p>
+<ul>
+    <li>
+        phonological, like automatic syllable dividing and automatic stress setting
+    </li>
+    <li>
+        phonetic, like rhythm and intonation
+    </li>
+    <li>
+        morphogical, like tagging and lemmatizing
+    </li>
+    <li>
+        pedagogical:
+        <a title="Slovene Apps" href="https://github.com/omelhoro/SlovApps">enhancement of slovene course</a>
+    </li>
+    <li>
+        visualization of linguistic phenomena (<a href="http://d3js.org">D3</a> + <a href=http://getbootstrap.com/ >Bootstrap</a> )
+    </li>
+</ul>
+<p>
+    Feel free to read my <a href="/sempapers">seminar papers or BA-thesis</a>
+</p>
+Contact: igor.fischer154[at]gmail.com.
 
-Besides programming I like reading science-fiction (especially Stanislaw Lem or short stories) and learning portugues.
-  <p>I've done projects in various linguistic fields, for example </p>
-  <ul>
-    <li>phonological, like automatic syllable dividing, speech synthesis, automatic stress setting</li>
-    <li>morphogical, like tagging, lemmatizing and systemitizing</li>
-    <li>
-      pedagogical, 
-      <a title="Slovene Apps" href="https://github.com/omelhoro/SlovApps">current project</a>
-    </li>
-    <li>vizualization of linguistic phenomena</li>
-  </ul>
-  <p>Take a look at my BA-Thesis:</p>
-  <p>
-    <a href="{{ url_for('static', filename = './media/ba_thesis.pdf') }}">Vergleich der Silbenmodelle des Russischen mit Hilfe eines Natural Language Processing-Ansatzes</a>
-  </p>
-  <p>I've built a parser to translate Russian words into syllables according to 5 main models. Then I applied correspondence analysis for finding clusters between the models. An online version of it coming soon.</p>
-  <p>Or look at my other seminar works.</p>
-  <h4>My works</h4>
-  <h5>Slavistics (major)</h5>
-  <ul>
-    <li>
-      <a href="/static/media/black_monk.pdf">Der mentale Zustand A.V. Kovrins in der Erzählung “Der schwarze Mönch” von A.P. Čechov</a>
-    </li>
-    <li>
-      <a href="/static/media/intonation.pdf">Beschreibungsmodelle der russischen Intonation</a> (In co-authorship) 
-    </li>
-    <li>
-      <a href="/static/media/rhythm.pdf">Rhythmusvariation bei Muttersprachlern des Russischen</a>
-    </li>
-  </ul>
-  <h5>History (minor)</h5>
-  <ul>
-    <li>
-      <a href="/static/media/pol_january.pdf">Quellenanalyse von “The Polish National Committee’s Proclamation of January 22, 1863″ </a>
-    </li>
-    <li>
-      <a href="/static/media/panslavism.pdf">Der Panslawismus in der ersten Hälfte des 19. Jahrhunderts</a>
-    </li>
-    <li>
-      <a href="/static/media/mongol.pdf">Ein Brief des Kaisers über die Mongolengefahr</a>
-    </li>
-    <li>
-      <a href="/static/media/kazach.pdf">Die Unabhängigkeit Kasachstans 1985-1991</a>
-    </li>
-    <li>
-      <a href="/static/media/brest-litovsk.pdf">Außenpolitik der Bolschewiki von der Novemberrevolution bis zum Frieden von Brest-Litowsk: Konzept oder Pragmatismus?</a>
-    </li>
-  </ul>
-  <p> </p>
 {% endblock %}

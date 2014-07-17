@@ -1,25 +1,40 @@
 {% extends "base_boot.html" %}
 
 {% block navbar %}
-<div class="masthead"><img src="/static/homepage_headerv2.png" /></div>
+<div class="masthead"><img src="/static/header_small.png" />
+</div>
 
-<div class="navbar navbar-inverse" role="navigation">
+<div class="navbar navbar-default" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle"
-             data-toggle="collapse" data-target=".navbar-collapse">
+            data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Home</a>
+            <!-- <a class="navbar-brand" href="/">Home</a> -->
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="/resumee">Resumee</a></li>
-                <li><a href="/projects">Projects</a></li>
-                <li><a href="/about_me">About me</a></li>
+                {% for k,(v,tx) in pages %}
+                {% if v is string %}
+                <li class={{ "active" if request["path"]==k else "" }} >
+                    <a  href="{{ k }}">{{ tx }}</a>
+                </li>
+                {% else %}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ tx }}<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        {% for p,t in v %}
+                        <li class={{ "active" if request["path"]==url_for(k ,pro=p) else "" }} >
+                            <a  href="{{ url_for(k ,pro=p)  }}">{{ t }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% endfor %}
             </ul>
         </div>
     </div>
@@ -28,16 +43,16 @@
 
 {% block content %}
 <div class="container">
-    
-<div class="row marketing">
-    <div class="page-header">
     {% block article %}
+    <article>
         <h1>Some news!</h1>
-        <p>Now that the site is online, I will steadily expand it as I move forward to <a href='http://flask.pocoo.org/docs/'>Flask</a> mastery. Currently there is no blog, but i'll change soon! So look out for posts about my journey in Digital Humanities... 
-             </p>
-             <p>Feel free to read my seminar works (although their written in German)</p>
-    {% endblock %}
-    </div>
-</div>
+        <p>
+            Now that the site is online, I will steadily expand it as I move forward to <a href='http://flask.pocoo.org/docs/'>Flask</a> and  mastery. Currently there is no blog, but it'll change soon! So look out for posts about my journey in Digital Humanities...
+        </p>
+        <p>
+            Feel free to read my seminar works (although their written in German)
+        </p>
+        {% endblock %}
+    </article>
 </div>
 {% endblock %}

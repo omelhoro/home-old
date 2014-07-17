@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block article %}
+  <p>Take a look at my BA-Thesis:</p>
+  <p>
+    <a href="{{ url_for('static', filename = './media/sempaps/ba-thesis.pdf') }}">Vergleich der Silbenmodelle des Russischen mit Hilfe eines Natural Language Processing-Ansatzes</a>
+  </p><span class="label label-info">Info</span>
+  <p>I've built a parser to translate Russian words into syllables according to 5 main models. Then I applied correspondence analysis for finding clusters between the models. An online version of it coming soon.</p>
+  <p>Or look at my other seminar works. Not all are Latex-set, you'll see it :)</p>
+  <h4>My seminar papers</h4>
+  <h5>Slavistics (major)</h5>
+  <ul>
+    <li>
+      <a href="/static/media/sempaps/blackmonk.pdf">Der mentale Zustand A.V. Kovrins in der Erzählung “Der schwarze Mönch” von A.P. Čechov</a>
+    </li>
+    <li>
+      <a href="/static/media/sempaps/intonation.pdf">Beschreibungsmodelle der russischen Intonation</a> (In co-authorship) 
+    </li>
+    <li>
+      <a href="/static/media/sempaps/rhythm.pdf">Rhythmusvariation bei Muttersprachlern des Russischen</a>
+    </li>
+  </ul>
+  <h5>History (minor)</h5>
+  <ul>
+    <li>
+      <a href="/static/media/sempaps/january_uprising.pdf">Quellenanalyse von “The Polish National Committee’s Proclamation of January 22, 1863″ </a>
+    </li>
+    <li>
+      <a href="/static/media/sempaps/panslavism.pdf">Der Panslawismus in der ersten Hälfte des 19. Jahrhunderts</a>
+    </li>
+    <li>
+      <a href="/static/media/sempaps/mongols.pdf">Ein Brief des Kaisers über die Mongolengefahr</a>
+    </li>
+    <li>
+      <a href="/static/media/sempaps/kazachs.pdf">Die Unabhängigkeit Kasachstans 1985-1991</a>
+    </li>
+    <li>
+      <a href="/static/media/sempaps/brest-litovsk.pdf">Außenpolitik der Bolschewiki von der Novemberrevolution bis zum Frieden von Brest-Litowsk: Konzept oder Pragmatismus?</a>
+    </li>
+  </ul>
+    <h5>Miscellaneous</h5>
+  <ul>
+      <li><a href="http://www.bergedorfer-zeitung.de/printarchiv/reinbek/article123207695/Reinbeker-schreibt-ein-Stueck-Weltgeschichte-mit.html">My participance in an Russian-German forum (on German side)</a></li>
+      
+      
+  </ul>
+{% endblock %}

@@ -1,5 +1,64 @@
 .masthead img {
-width: 100%;
-    max-width: 1400px;
+    width: 100%;
+    max-width: 800px;
+    max-height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
+div.menu {
+    position: absolute;
+}
+
+div.container {
+    width: 100%;
+    max-width: 800px;
+}
+.summary {
+}
+.photoofme {
+    max-height: 200px;
+    float: right;
+}
+/*corpus class*/
+
+.case{
+  text-align: right;
+}
+
+.case.nom{
+    background-color: #69F59F;
+}
+.case.gen{
+    background-color: #FFFF00;
+}
+.case.dat{
+    background-color: #DC4AF0;
+}
+.case.akk{
+    background-color: #FA3939;
+}
+.case.lok{
+    background-color: #0EF0EC;
+}
+.case.ins{
+    background-color: #4792FC;
+}
+
+.false{
+    background-color: red;
+}
+
+.right{
+    background-color: green;
+}
+
+.empty{
+  background-color: #F6F6F6;
+}
+
+.descTableRow > td{
+  padding:10px;
+     width: 20%;
 }

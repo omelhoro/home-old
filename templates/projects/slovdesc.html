@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block head %}
+{% endblock %}
+{% block article %}
+<h3>Slovene desclension</h3>
+<p>
+    I've always struggled to learn flexion-languages like Slovene. Excitingly wikipedia offers desclension tables for many words.
+    Firstly I parsed the html-sites with a little Python-script and than built a little client-side coach for the tables.
+    Of course, this little exercise is only a part of a bigger project: <a href="https://github.com/omelhoro/SlovApps">here</a>.
+    They are programmed in Dart and make heavy use of Polymer. <span class="label label-warning">Loading take some secs</span>
+</p>
+<div id="appF">
+
+</div>
+{% block script %}
+<script type="text/javascript">
+	var compDir = "/static/dartjs/";
+	var flName = "selfpoly";
+	$.get(compDir + flName + ".html", function(data) {
+		var pattern = /<body[^>]*>((.|[\n\r])*)<\/body>/im;
+		var array_matches = pattern.exec(data);
+		outp = array_matches[1].replace(/packages\/web_components\//g, compDir);
+		outp = outp.replace("packages/browser/", compDir);
+		outp = outp.replace("packages/polymer/src/js/polymer/polymer.js", compDir + 'polymer.js');
+		outp = outp.replace(flName + '.html_bootstrap.dart', compDir + flName + '.html_bootstrap.dart');
+		$("#appF").html(outp);
+	}); 
+</script>
+
+{% endblock %}
+{% endblock %}

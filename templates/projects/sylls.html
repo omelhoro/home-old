@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+{% block article %}
+<h3>Syllables</h3>
+<p>
+    This project deals with the syllable models in Russian and their implementation in Natural Language Processing. There are actually 3 sole Russian models, 2 Western models, at least from western researchers. The app is written in Python.
+</p>
+<p>
+    You can see the results of parsing the <a href='http://www.ruscorpora.ru/corpora-usage.html'>1 million subset of Russian Corpus</a> .
+    Due to the different character of the documents, I took a further subset of 395 documents (from 530 documents) according to the meta-tags
+    <ul>
+        <li>
+            "style"=нейтральный/neutral
+        </li>
+        <li>
+            "audience_age"=н-возраст/all
+        </li>
+        <li>
+            "audience_level"=н-уровень/all
+        </li>
+        <li>
+            "subcorpus"=ПК письменных текстов/subcorpus of written texts
+        </li>
+    </ul>
+    There are 5 main models for syllable division
+    <ul>
+        <li>
+            1. Model (SM1) -<strong>the Vinogradov model</strong> - in Vinogradov, Viktor u. a. (1953). Grammatika russkogo jazyka. Moskva: Academy
+            of Science of the USSR
+        </li>
+        <li>
+            SM2 -<strong>the Avanesov model</strong> - in Avanesov, Ruben (1956). Fonetika sovremennogo russkogo literaturnogo jazyka.
+            Moskva: Izdat. Moskov. Univ.
+        </li>
+        <li>
+            SM3 -<strong>the Bondarko model</strong> - in Bondarko (1998). Fonetika sovremennogo russkogo jazyka. St. Petersburg: Izd.
+            S.-Peterburgskogo Univ.
+        </li>
+        <li>
+            SM4 -<strong> the Kempgen model</strong>- in Kempgen, Sebastian (2003). »Phonologische Silbentrennung im Russischen«. In:
+            Rusistika - Slavistika-Lingvistika. Festschrift für Wemer Lehfeld zum 60. Geburtstag. Hrsg. von Sebastian et al. Kempgen. München: Sagner, S. 195–211
+            <a href=http://kodeks.uni-bamberg.de/slavling/downloads/SK_Phonol_Silbentrennung_Russ.pdf>here</a>
+        </li>
+        <li>
+            SM5 -<strong>the SSP model</strong> - in i.e. Iacoponi, Luca und Renata Savy (2011). »Sylli: Automatic Phonological Syl-
+            labification for Italian.« In: INTERSPEECH. ISCA, S. 641–644. <a href=http://eden.rutgers.edu/~li51/php/papers/interspeech2011.pdf >here</a>
+        </li>
+    </ul>
+</p>
+<div class=corpus_viz>
+    <style >
+        path {
+            fill: None;
+        }
+        .grid-line {
+            stroke: black;
+            stroke-width: 0.1;
+        }
+        path.domain {
+            shape-rendering: crispEdges;
+            stroke: blue;
+        }
+        g.axes text {
+            dominant-baseline: text-after-edge;
+        }
+
+    </style>
+    <div class=corpus_menu>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">
+                        Y-tags filter
+                    </div>
+                    <div class="panel-body">
+                        <div class="input-group">
+                            <span class="input-group-addon">By regex</span>
+                            <input class='form-control yregex' type='text' size=5 />
+                            <span class="input-group-btn">
+                                <button class="btn btn-default submfiltery" type="button">
+                                    Go!
+                                </button> </span>
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon">By range from</span>
+                            <input class='form-control startrange' type='number' min=0 max=2000 value=0 />
+                            <span class="input-group-addon">to</span>
+                            <input class='form-control endrange' type='number' min=0 max=2000 value=60>
+                            <span class="input-group-btn">
+                                <button class="btn btn-default submfiltery" type="button">
+                                    Go!
+                                </button> </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Categories filter
+                    </div>
+                    <div class='viz'>
+
+                    </div>
+                    <div class="panel-body catfilters">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <input type="radio" name='quaview' value='logged' >
+                            </span>
+                            <span class='form-control'>Logged</span>
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <input type="radio" name='quaview' value='shared'/>
+                            </span>
+                            <span class='form-control'>Shared</span>
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <input type="radio" name='quaview' value='totals' checked=true class='active' />
+                            </span>
+                            <span class='form-control'>Totals</span>
+                        </div>
+
+                        <div class="input-group">
+                            <span class="input-group-addon">Select by regex</span>
+                            <input class='form-control catregex' type='text' size=5 />
+                            <span class="input-group-btn">
+                                <button class="btn btn-default submcatregex" type="button">
+                                    Go!
+                                </button> </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="/static/d3.js"></script>
+<script type="text/javascript" >corpus_src = "/static/data/syl_subset.csv";</script>
+<script type="text/javascript" src="/static/corpus_class.js"></script>
+{% endblock %}
