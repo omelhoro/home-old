@@ -1,1 +1,1 @@
-/home/igor/workspace_dart/major/ps/build/web/selfpoly.html_bootstrap.dart.js
+/home/igor/workspace_main/slovapps/build/web/selfpoly.html_bootstrap.dart.js

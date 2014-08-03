@@ -10,9 +10,11 @@ pages=(
        ("/",("about_me","About me")),
     ("/resumee",("","Resumee")),
     ("/projects/<pro>",( 
-                        (("sylls","Syllables"),
+                        (
+                         ("sylls","Syllables"),
+                         ("syllsviz","LingViz"),
                          ("slovdesc","Slovene"),
-                         ("comsoon","Praat & xml"),
+                         ("praatxml","Praat & xml"),
                          )
                         ,"Projects")),
     ("/sempapers",("","Study")),
@@ -28,7 +30,7 @@ def create_route(routview):
             else:
                 return render_template(re.sub("<.+>","",viewpath)+pro+".html",pages=pages,path=request)
         return level 
-
+ 
     route,(view,txt)=routview
     if isinstance(view,tuple) or not view:
         view=route

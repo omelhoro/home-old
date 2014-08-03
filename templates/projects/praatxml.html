@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block head %} {% endblock %} {% block
+article %}
+<h3>Converting textgrids to xml</h3>
+<p>
+As textgrids are a very unique format, one has to write scripts in Praats own script-language to parse the data. 
+Sometimes using Python and e.g. pandas is more convenient, so this app converts grids to xml.
+For now only interval-grids are supported. Development is <a href='https://github.com/omelhoro/praat-xml'>here</a>. 
+</p>
+<div class='main-app'></div>
+{% endblock %} {% block scripts %}
+<script type="text/javascript">
+  var compDir = "/static/praatxml/";
+  var flName = "index";
+  $
+      .get(
+          compDir + flName + ".html",
+          function(data) {
+            d = $.parseHTML(data);
+            df = d.filter(function(e, i) {
+              return $(e).hasClass("praatxml")
+            });
+            console.log($(df[0]).children());
+            $(".main-app").append($(df[0]).children());
+            s = $("<script src='/static/praatxml/praatxml.js' type=text/javascript ><\/script>");
+            $(".main-app").append(s);
+
+          });
+</script>
+{% endblock %}

@@ -1,1 +1,0 @@
-/home/igor/workspace_dart/SlovSite/build/web/slovsite.dart.js

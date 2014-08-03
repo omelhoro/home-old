@@ -1,1 +1,0 @@
-/home/igor/workspace_dart/selfpoly/build/web/selfpoly.html_bootstrap.dart.js
