@@ -1,0 +1,1 @@
+/home/igor/workspace/ling_viz/static/target/corpus.js

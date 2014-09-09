@@ -1,9 +1,17 @@
-{% extends "base.html" %} {% block head %} {% endblock %} {% block
-article %}
+{% extends "base.html" %} 
+{% block head %} {% endblock %} 
+{% block article %}
 <h3>Syllable Division</h3>
-<p></p>
+<IFRAME SRC="/static/russyll/index.html" WIDTH=100% height=800px>
+If you can see this, your browser doesn't 
+understand IFRAME.  However, we'll still 
+<A HREF="/static/russyll/index.html">link</A> 
+you to the file.
+</IFRAME>
+{% endblock %}
+<!-- 
 <div class='main-syll'></div>
-{% endblock %} {% block scripts %}
+ {% block scripts %}
 <script type="text/javascript">
 	var compDir = "/static/syllable/";
 	var flName = "index";
@@ -21,5 +29,5 @@ article %}
 						$(".main-syll").append(s);
 
 					});
-</script>
 {% endblock %}
+</script> -->

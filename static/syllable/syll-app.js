@@ -1,1 +1,0 @@
-/home/igor/workspace_minor/websyll/static/syllable/syll-app.js

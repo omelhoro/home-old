@@ -1,10 +1,25 @@
 {% extends "base_boot.html" %}
 
 {% block navbar %}
-<div class="masthead"><img src="/static/header_small.png" />
+
+<div class="masthead">
+<!--  
+<img src="/static/header_small.png" />
+-->
+
+        <!--[if lt IE 8]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div class='header-back'>
+            <span class='full-name'>igor<strong>fischer</strong></span>
+            <div class='name'>
+            </div>
+        </div>
 </div>
 
-<div class="navbar navbar-default" role="navigation">
+<div class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle"

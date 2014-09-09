@@ -1,0 +1,12 @@
+[submodule "static/slov-apps"]
+	path = static/slov-apps
+	url = https://github.com/omelhoro/slov-apps
+[submodule "static/russyll"]
+	path = static/russyll
+	url = https://github.com/omelhoro/russyll
+[submodule "static/praat-xml"]
+	path = static/praat-xml
+	url = https://github.com/omelhoro/praat-xml
+[submodule "rustress"]
+	path = rustress
+	url = https://github.com/omelhoro/rustress

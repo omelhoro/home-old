@@ -1,1 +1,0 @@
-/home/igor/workspace_minor/praatxml/static/praatxml/praatxml.js

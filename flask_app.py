@@ -3,6 +3,10 @@ from flask import render_template
 import re
 app = Flask(__name__)
 
+from rustress.webapi_blue import setup_rs
+app_rs=setup_rs()
+app.register_blueprint(app_rs)
+
 # @app.route("/")
 # def index():
 #     return render_template("base.html")
@@ -15,6 +19,7 @@ pages=(
                          ("syllsviz","LingViz"),
                          ("slovdesc","Slovene"),
                          ("praatxml","Praat & xml"),
+                         ("rustress","Russian stress"),
                          )
                         ,"Projects")),
     ("/sempapers",("","Study")),
@@ -33,7 +38,7 @@ def create_route(routview):
  
     route,(view,txt)=routview
     if isinstance(view,tuple) or not view:
-        view=route
+        view=route 
     f=url(view)  
     f.__name__=view
     return app.route(route)(f)

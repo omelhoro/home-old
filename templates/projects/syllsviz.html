@@ -65,83 +65,15 @@
         }
 
     </style>
-    <div class=corpus_menu>
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="panel panel-default">
-                    <!-- Default panel contents -->
-                    <div class="panel-heading">
-                        Y-tags filter
-                    </div>
-                    <div class="panel-body">
-                        <div class="input-group">
-                            <span class="input-group-addon">By regex</span>
-                            <input class='form-control yregex' type='text' size=5 />
-                            <span class="input-group-btn">
-                                <button class="btn btn-default submfiltery" type="button">
-                                    Go!
-                                </button> </span>
-                        </div>
-                        <div class="input-group">
-                            <span class="input-group-addon">By range from</span>
-                            <input class='form-control startrange' type='number' min=0 max=2000 value=0 />
-                            <span class="input-group-addon">to</span>
-                            <input class='form-control endrange' type='number' min=0 max=2000 value=60>
-                            <span class="input-group-btn">
-                                <button class="btn btn-default submfiltery" type="button">
-                                    Go!
-                                </button> </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Categories filter
-                    </div>
-                    <div class='viz'>
-
-                    </div>
-                    <div class="panel-body catfilters">
-                        <div class="input-group">
-                            <span class="input-group-addon">
-                                <input type="radio" name='quaview' value='logged' >
-                            </span>
-                            <span class='form-control'>Logged</span>
-                        </div>
-                        <div class="input-group">
-                            <span class="input-group-addon">
-                                <input type="radio" name='quaview' value='shared'/>
-                            </span>
-                            <span class='form-control'>Shared</span>
-                        </div>
-                        <div class="input-group">
-                            <span class="input-group-addon">
-                                <input type="radio" name='quaview' value='totals' checked=true class='active' />
-                            </span>
-                            <span class='form-control'>Totals</span>
-                        </div>
-
-                        <div class="input-group">
-                            <span class="input-group-addon">Select by regex</span>
-                            <input class='form-control catregex' type='text' size=5 />
-                            <span class="input-group-btn">
-                                <button class="btn btn-default submcatregex" type="button">
-                                    Go!
-                                </button> </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
+<script type="text/javascript" src="/static/js/d3.js"></script>
+<script type="text/javascript" >corpus_src = "/static/syllable/syl_subset.csv";</script>
+<div id='syll-map'></div>
+	<script type='text/javascript'>
+$.get('/static/ling_viz/corpus.html',function(d){
+		$('#syll-map').html(d)})
+	</script>)
 </div>
 {% endblock %}
 
 {% block scripts %}
-<script type="text/javascript" src="/static/d3.js"></script>
-<script type="text/javascript" >corpus_src = "/static/syllable/syl_subset.csv";</script>
-<script type="text/javascript" src="/static/corpus_class.js"></script>
 {% endblock %}
