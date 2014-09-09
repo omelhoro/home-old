@@ -1,4 +1,4 @@
-from flask import Flask,request
+from flask import Flask,request,redirect
 from flask import render_template
 import re
 app = Flask(__name__)
@@ -43,6 +43,11 @@ def create_route(routview):
     f.__name__=view
     return app.route(route)(f)
 
+
+#redirection for dart app, dart doest support relative links, but hard links then need symlinks, so its easier to simple redirect
+@app.route("/static/css/selfpoly.css")
+def redir():
+    return redirect("/static/slov-apps/build/web/static/css/selfpoly.css")
 fns=map(create_route,pages) 
         
 if __name__ == "__main__": 

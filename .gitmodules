@@ -10,3 +10,6 @@
 [submodule "rustress"]
 	path = rustress
 	url = https://github.com/omelhoro/rustress
+[submodule "static/lingplot"]
+	path = static/lingplot
+	url = https://github.com/omelhoro/lingplot
