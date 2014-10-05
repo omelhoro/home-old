@@ -20,6 +20,7 @@ pages=(
                          ("slovdesc","Slovene"),
                          ("praatxml","Praat & xml"),
                          ("rustress","Russian stress"),
+                         ("foreignrus","Claiming Respect"),
                          )
                         ,"Projects")),
     ("/sempapers",("","Study")),
