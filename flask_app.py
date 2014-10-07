@@ -24,7 +24,7 @@ pages=(
                          )
                         ,"Projects")),
     ("/sempapers",("","Study")),
-    ("/workviz",("","Work samples (viz)")), 
+    ("/workviz",("","Work samples")), 
        )
 
 def create_route(routview):
