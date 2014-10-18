@@ -15,7 +15,7 @@ pages=(
     ("/resumee",("","Resumee")),
     ("/projects/<pro>",( 
                         (
-                         ("sylls","Syllables"),
+                         ("sylls","Syllables (BA-App)"),
                          ("syllsviz","LingViz"),
                          ("slovdesc","Slovene"),
                          ("praatxml","Praat & xml"),
