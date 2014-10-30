@@ -4,17 +4,28 @@
 {% block article %}
 <h3>Learning Slovenian</h3>
 <p>
-    I've always struggled to learn flexion-languages like Slovenian. Excitingly wikipedia offers descension tables for many words.
-    Firstly I parsed the html-sites with a little Python-script and than built a little client-side coach for the tables.
-    Of course, this little exercise is only a part of a bigger project: <a href="https://github.com/omelhoro/slov-apps">here</a>.
-    They are programmed in Dart and make heavy use of Polymer. They are not tested in IE and Opera. <span class="label label-warning">Loading take some secs )</span>
+I've always loved this <a href=http://www.slowenisch.uni-hamburg.de/ >Slovenian course</a> and wanted to add some exercises which I've found useful on my own learn path. For example:
+<ul>
+    <li>
+    A descension trainer to exercise the singular, dual and plural</li>
+    <li>
+    Also a vocabulary trainer to learn the words of 17 lessons
+    </li>
+    <li>The possibily to  exercise according to a part-of-speech and lesson-group</li>
+    <li>A view on text that can tell you which part-of-speech a word is, which make understanding easier <span class='label label-warning'>now it is based on statistical tagging, which leads to errors</span></li>
+    <li>A game based on the last point  to guess the right case of the words</li>
+    <li>A memory-game to connect the words to a picture, what also enhances the learning experience</li>
+</ul>
+You can participate in the development at github: <a href="https://github.com/omelhoro/slov-apps">here</a>.
+The rights to the exercises lies within <a href=http://www.slowenisch.uni-hamburg.de/>http://www.slowenisch.uni-hamburg.de/</a>, the data for the descension-app comes from wikipedia.
+This app is programmed in Dart and make heavy use of Polymer. It is not tested in IE and Opera. <span class="label label-warning">Loading take some secs</span>
 </p>
 
 <IFRAME SRC="/static/slov-apps/build/web/selfpoly.html" WIDTH=100% height=800px>
-If you can see this, your browser doesn't 
-understand IFRAME.  However, we'll still 
-<A HREF="/static/dartjs/selfpoly.html">link</A> 
-you to the file.
+    If you can see this, your browser doesn't 
+    understand IFRAME.  However, we'll still 
+    <A HREF="/static/dartjs/selfpoly.html">link</A> 
+    you to the file.
 </IFRAME>
 <!-- 
 <div id="appF">
@@ -22,18 +33,18 @@ you to the file.
 </div>
 {% block script %}
 <script type="text/javascript">
-	var compDir = "/static/dartjs/";
-	var flName = "selfpoly";
-	$.get(compDir + flName + ".html", function(data) {
-		var pattern = /<body[^>]*>((.|[\n\r])*)<\/body>/im;
-		var array_matches = pattern.exec(data);
-		  console.log(array_matches);
-		outp = array_matches[1].replace(/packages\/web_components\//g, compDir);
-		outp = outp.replace("packages/browser/", compDir);
-		outp = outp.replace("packages/polymer/src/js/polymer/polymer.js", compDir + 'polymer.js');
-		outp = outp.replace(flName + '.html_bootstrap.dart', compDir + flName + '.html_bootstrap.dart');
-		$("#appF").html(outp);
-	}); 
+    var compDir = "/static/dartjs/";
+    var flName = "selfpoly";
+    $.get(compDir + flName + ".html", function(data) {
+        var pattern = /<body[^>]*>((.|[\n\r])*)<\/body>/im;
+        var array_matches = pattern.exec(data);
+          console.log(array_matches);
+        outp = array_matches[1].replace(/packages\/web_components\//g, compDir);
+        outp = outp.replace("packages/browser/", compDir);
+        outp = outp.replace("packages/polymer/src/js/polymer/polymer.js", compDir + 'polymer.js');
+        outp = outp.replace(flName + '.html_bootstrap.dart', compDir + flName + '.html_bootstrap.dart');
+        $("#appF").html(outp);
+    }); 
 </script>
  -->
 
