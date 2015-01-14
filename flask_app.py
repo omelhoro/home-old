@@ -1,11 +1,16 @@
-from flask import Flask,request,redirect
+from flask import Flask,request,redirect,send_from_directory
 from flask import render_template
 import re
 app = Flask(__name__)
 
-from rustress.webapi_blue import setup_rs
-app_rs=setup_rs()
-app.register_blueprint(app_rs)
+@app.route('/robots.txt')
+@app.route('/sitemap.xml')
+def static_from_root():
+    return send_from_directory(app.static_folder, request.path[1:])
+
+# from rustress.webapi_blue import setup_rs
+# app_rs=setup_rs()
+# app.register_blueprint(app_rs)
 
 # @app.route("/")
 # def index():
@@ -49,7 +54,7 @@ def create_route(routview):
 @app.route("/static/css/selfpoly.css")
 def redir():
     return redirect("/static/slov-apps/build/web/static/css/selfpoly.css")
-fns=map(create_route,pages) 
+fns=list(map(create_route,pages) )
         
 if __name__ == "__main__": 
     app.debug = True
