@@ -7,12 +7,12 @@
 [submodule "static/praat-xml"]
 	path = static/praat-xml
 	url = https://github.com/omelhoro/praat-xml
-[submodule "rustress"]
-	path = rustress
-	url = https://github.com/omelhoro/rustress
 [submodule "static/lingplot"]
 	path = static/lingplot
 	url = https://github.com/omelhoro/lingplot
 [submodule "static/tex-mydocs"]
 	path = static/tex-mydocs
 	url = https://github.com/omelhoro/tex-mydocs
+[submodule "rustress"]
+	path = rustress
+	url = https://github.com/omelhoro/rustress
