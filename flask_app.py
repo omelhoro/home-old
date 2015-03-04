@@ -8,9 +8,9 @@ app = Flask(__name__)
 def static_from_root():
     return send_from_directory(app.static_folder, request.path[1:])
 
-# from rustress.webapi_blue import setup_rs
-# app_rs=setup_rs()
-# app.register_blueprint(app_rs)
+from rustress.webapi_blue import setup_rs
+app_rs=setup_rs()
+app.register_blueprint(app_rs)
 
 # @app.route("/")
 # def index():
