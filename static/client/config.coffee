@@ -4,8 +4,8 @@ exports.config =
     javascripts:
       defaultExtension: 'coffee'
       joinTo:
-        'javascripts/app.js': /^app/
-        'javascripts/vendor.js': /^vendor/
+        '../../javascripts/app.js': /^app/
+        '../../javascripts/vendor.js': /^vendor/
       order:
         before: [
           'vendor/scripts/console-helper.js',
@@ -16,11 +16,11 @@ exports.config =
 
     stylesheets:
       defaultExtension: 'styl'
-      joinTo: 'stylesheets/app.css'
+      joinTo: '../../stylesheets/app.css'
       order:
         before: ['vendor/styles/normalize.css']
         after: ['vendor/styles/helpers.css']
 
     templates:
       defaultExtension: 'hbs'
-      joinTo: 'javascripts/app.js'
+      joinTo: '../../javascripts/app.js'
