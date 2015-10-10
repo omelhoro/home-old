@@ -35,8 +35,8 @@ pages = (
 
 def create_route(routview):
 
-
  
+
     def url(viewpath):
         def level(pro=None):
             if pro is None:
