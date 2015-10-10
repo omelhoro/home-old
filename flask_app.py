@@ -60,4 +60,4 @@ fns = list(map(create_route, pages))
 
 if __name__ == "__main__":
     app.debug = True
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
