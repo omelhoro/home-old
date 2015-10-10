@@ -31,7 +31,7 @@ pages = (
     ("/sempapers", ("", "Study")),
     ("/workviz", ("", "Work samples")),
 )
-
+ 
 
 def create_route(routview):
 
