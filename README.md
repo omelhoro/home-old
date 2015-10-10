@@ -9,6 +9,7 @@ Git rep for my Flask homepage along with the media
 
 ```
 flask
+uswsgi
 pymorphy2
 git submodule init
 git submodule update
