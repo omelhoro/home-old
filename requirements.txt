@@ -1,3 +1,1 @@
 flask
-cherrypy
-pymorphy2
