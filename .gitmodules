@@ -13,6 +13,3 @@
 [submodule "static/tex-mydocs"]
 	path = static/tex-mydocs
 	url = https://github.com/omelhoro/tex-mydocs
-[submodule "rustress"]
-	path = rustress
-	url = https://github.com/omelhoro/rustress
